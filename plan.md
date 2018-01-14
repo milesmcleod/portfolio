@@ -8,17 +8,17 @@
     - bandcamp
     - soundcloud
   - technology icons (scrolling)
-    - js
-    - react
-    - redux
-    - ruby
-    - rails
-    - react native
-    - sql
-    - mongoDB
-    - express
-    - node
-    - jest
+    - js (done)
+    - react (done)
+    - redux (done)
+    - ruby (done)
+    - rails (done)
+    - react native (done)
+    - sql (done)
+    - mongoDB (done)
+    - express (done)
+    - node (done)
+    - jest (done)
   - loading image
 
 

@@ -26,6 +26,8 @@ body {
   color: white;
   font-size: 78px;
   margin-left: 10%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
 }
 
 .lava {
@@ -34,7 +36,7 @@ body {
   position: absolute;
   z-index: 1;
   left: 65%;
-  width: 20%;
+  width: 25%;
   height: 100%;
   border: 1px solid green;
 }
@@ -56,6 +58,8 @@ body {
   z-index: 10;
   background-color: black;
   color: white;
+  font-size: 36px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .headshot-container {
@@ -91,8 +95,16 @@ body {
   border: 1px solid green;
 }
 
+.tech img {
+  height: 60%;
+  border-radius: 10%;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+
 .tech-background {
   position: absolute;
+  left: 0;
   height: 100%;
   width: 100%;
   background-color: black;
@@ -100,31 +112,49 @@ body {
 }
 
 .tech ul {
-  /* display: flex;
-  justify-content: space-around; */
+  align-content: center;
   position: relative;
   z-index: 5;
+  height: 100%;
 }
 
-.tech ul li {
+.tech-container {
   display: inline-block;
-  border: 1px solid yellow;
-  width: 240px;
-  height: 240px;
+  height: 30%;
   width: 20%;
   z-index: 20;
-  margin: auto;
+  margin-left: 4%;
+  margin-top: 1.2%;
+}
+
+.tech-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.tech-container p {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  margin-top: 10%;
 }
 
 .portfolio {
-  display: block;
+  display: flex;
+  justify-content: space-around;
   height: 100%;
   width: 100%;
   border: 1px solid purple;
+  background-color: black;
 }
 
 .project {
-
+  flex: 1;
+  border: 1px solid chartreuse;
+  margin: 20px;
 }
 
 [class*="project-background-"] {
@@ -132,8 +162,10 @@ body {
 }
 
 .contact {
-  display: block;
-  height: 60px;
+  display: flex;
+  height: 100px;
   width: 100%;
   border: 1px solid purple;
+  flex-direction: column;
+  align-items: center;
 }
