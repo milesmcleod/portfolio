@@ -127,14 +127,20 @@ var BubbleView = function BubbleView(ctx) {
 BubbleView.prototype.start = function (ctx) {
   var _this = this;
 
-  this.bindMouseHandlers();
+  this.bindClickHandler();
   setInterval(function () {
     _this.field.step();
     _this.field.draw(ctx);
   }, 20);
 };
 
-BubbleView.prototype.bindMouseHandlers = function () {};
+BubbleView.prototype.bindClickHandler = function () {
+  var _this2 = this;
+
+  document.addEventListener("click", function (e) {
+    _this2.field.clickCheck(e);
+  });
+};
 
 module.exports = BubbleView;
 
@@ -148,29 +154,41 @@ module.exports = BubbleView;
 var Bubble = __webpack_require__(4);
 
 var Field = function Field() {
+  this.lavaBox = document.getElementsByClassName("lava")[0];
+  this.boxDimensions = this.lavaBox.getBoundingClientRect();
+  this.left = this.boxDimensions.left;
+  this.top = this.boxDimensions.top;
+  this.width = this.boxDimensions.width;
+  this.height = this.boxDimensions.height;
+  this.colors = ["#7f00ff", "#9999ff", "#1a1aff", "#0099ff", "#00ffff", "#00ffcc", "#00b38f", "#6600ff"];
   this.bubbles = [];
   this.addBubbles();
 };
 
 Field.DIM_X = window.screen.width;
 Field.DIM_Y = window.screen.height;
-Field.NUM_ASTEROIDS = 300;
+Field.NUM_ASTEROIDS = 10;
 
 Field.prototype.addBubbles = function () {
   for (var i = 0; i < Field.NUM_ASTEROIDS; i++) {
-    var bubble = new Bubble({ pos: this.randomPosition(), field: this });
+    var bubble = new Bubble({
+      pos: this.randomPosition(),
+      field: this,
+      maxHeight: this.height
+    });
     this.bubbles.push(bubble);
   }
 };
 
 Field.prototype.randomPosition = function () {
-  var x = Math.random() * Field.DIM_X;
-  var y = Math.random() * Field.DIM_Y;
+  var x = Math.random() * this.width + this.left;
+  var y = Math.random() * this.height + this.top;
   return [x, y];
 };
 
 Field.prototype.draw = function (ctx) {
   ctx.clearRect(0, 0, Field.DIM_X, Field.DIM_Y);
+  this.moveObjects();
   this.allObjects().forEach(function (movingObject) {
     movingObject.draw(ctx);
   });
@@ -178,7 +196,7 @@ Field.prototype.draw = function (ctx) {
 
 Field.prototype.moveObjects = function () {
   this.allObjects().forEach(function (movingObject) {
-    // movingObject.move();
+    movingObject.move();
   });
 };
 
@@ -198,6 +216,22 @@ Field.prototype.allObjects = function allObjects() {
   return all;
 };
 
+Field.prototype.clickCheck = function (event) {
+  var _this = this;
+
+  var x = event.clientX;
+  var y = event.clientY;
+  this.bubbles.forEach(function (bubble) {
+    var left = bubble.pos[0] - bubble.radius;
+    var right = bubble.pos[0] + bubble.radius;
+    var top = bubble.pos[1] + bubble.radius;
+    var bottom = bubble.pos[1] - bubble.radius;
+    if (x > left && x < right && y > bottom && y < top) {
+      bubble.color = _this.colors[Math.floor(Math.random() * _this.colors.length)];
+    }
+  });
+};
+
 module.exports = Field;
 
 /***/ }),
@@ -213,11 +247,11 @@ var MovingObject = __webpack_require__(5);
 var Asteroid = function Asteroid(options) {
   options.color = Asteroid.COLOR[Math.floor(Math.random() * 5)];
   options.radius = Asteroid.RADIUS[Math.floor(Math.random() * 12)];
-  options.vel = Util.randomVec(2);
+  options.vel = Util.randomVec(1.5);
   MovingObject.prototype.constructor.call(this, options);
 };
 
-Asteroid.COLOR = ["#000000", "#1A1A1A", "#252525", "#212121", "#080808", "#151515"];
+Asteroid.COLOR = ["#FF0000", "#B30000", "#FF9933", "#FF3300", "#FFCC00"];
 Asteroid.RADIUS = [36, 48, 60, 72, 84, 96, 108, 120, 132, 144, 156, 168];
 
 Util.inherits(Asteroid, MovingObject);
@@ -239,6 +273,8 @@ var MovingObject = function MovingObject(options) {
   this.radius = options.radius;
   this.color = options.color;
   this.field = options.field;
+  this.type = Math.floor(Math.random() * 2);
+  this.maxHeight = options.maxHeight;
 };
 
 MovingObject.prototype.draw = function draw(ctx) {
@@ -250,9 +286,19 @@ MovingObject.prototype.draw = function draw(ctx) {
 };
 
 MovingObject.prototype.move = function move() {
-  this.pos[0] += this.vel[0];
-  this.pos[1] += this.vel[1];
-  this.game.wrap(this.pos);
+  switch (this.type) {
+    case 0:
+      this.pos[1] += this.vel[1];
+      break;
+    case 1:
+      this.pos[1] += this.vel[1];
+      break;
+  }
+  if (this.pos[1] > this.maxHeight + this.radius) {
+    this.pos[1] = 0 - this.radius;
+  } else if (this.pos[1] < 0 - this.radius) {
+    this.pos[1] = this.maxHeight + this.radius;
+  }
 };
 
 MovingObject.prototype.isCollidedWith = function isCollidedWith(otherObject) {

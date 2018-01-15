@@ -6,6 +6,8 @@ const MovingObject = function MovingObject(options) {
   this.radius = options.radius;
   this.color = options.color;
   this.field = options.field;
+  this.type = Math.floor(Math.random() * 2);
+  this.maxHeight = options.maxHeight;
 };
 
 MovingObject.prototype.draw = function draw(ctx) {
@@ -24,9 +26,19 @@ MovingObject.prototype.draw = function draw(ctx) {
 };
 
 MovingObject.prototype.move = function move() {
-  this.pos[0] += this.vel[0];
-  this.pos[1] += this.vel[1];
-  this.game.wrap(this.pos);
+  switch (this.type) {
+    case 0:
+        this.pos[1] += this.vel[1];
+      break;
+    case 1:
+        this.pos[1] += this.vel[1];
+      break;
+  }
+  if (this.pos[1] > this.maxHeight + this.radius ) {
+    this.pos[1] = 0 - this.radius;
+  } else if (this.pos[1] < 0 - this.radius) {
+    this.pos[1] = this.maxHeight + this.radius;
+  }
 };
 
 MovingObject.prototype.isCollidedWith = function isCollidedWith(otherObject) {

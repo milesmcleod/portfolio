@@ -6,7 +6,7 @@ const BubbleView = function BubbleView(ctx) {
 };
 
 BubbleView.prototype.start = function(ctx) {
-  this.bindMouseHandlers();
+  this.bindClickHandler();
   setInterval( () => {
     this.field.step();
     this.field.draw(ctx);
@@ -14,8 +14,10 @@ BubbleView.prototype.start = function(ctx) {
 };
 
 
-BubbleView.prototype.bindMouseHandlers = function () {
-
+BubbleView.prototype.bindClickHandler = function () {
+  document.addEventListener("click", (e) => {
+    this.field.clickCheck(e);
+  });
 };
 
 module.exports = BubbleView;
