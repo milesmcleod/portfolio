@@ -242,14 +242,14 @@ body {
 .portfolio {
   display: flex;
   justify-content: space-around;
-  height: 120%;
+  height: 100%;
   width: 100%;
   /* border: 1px solid purple; */
   background-color: black;
 }
 
 .project {
-  flex: 1;
+  width: 30%;
   /* border: 5px solid whitesmoke;
   border-radius: 10px; */
   margin: 20px;
@@ -261,6 +261,12 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+
+.project-divider {
+  width: 2%;
+  height: 90%;
+  border-right: 2px solid whitesmoke;
 }
 
 .project h2 {
@@ -340,6 +346,7 @@ body {
   color: whitesmoke;
   text-decoration: none;
   margin: 20px;
+  font-size: 24px;
 }
 
 [class*="project-background-"] {
@@ -350,7 +357,11 @@ body {
   display: flex;
   height: 100px;
   width: 100%;
-  border: 1px solid purple;
-  flex-direction: column;
+  /* border: 1px solid purple; */
   align-items: center;
+  justify-content: space-around;
+  background: black;
+  color: whitesmoke;
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
 }
