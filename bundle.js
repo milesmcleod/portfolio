@@ -113,7 +113,15 @@ window.addEventListener("DOMContentLoaded", function () {
     $('html,body').animate({
       scrollTop: $('.bio').offset().top }, 'slow');
   });
+  $('#bio-link').click(function () {
+    $('html,body').animate({
+      scrollTop: $('.bio').offset().top }, 'slow');
+  });
   $('.scroll-button-2').click(function () {
+    $('html,body').animate({
+      scrollTop: $('.tech').offset().top }, 'slow');
+  });
+  $('#tools-link').click(function () {
     $('html,body').animate({
       scrollTop: $('.tech').offset().top }, 'slow');
   });
@@ -125,6 +133,10 @@ window.addEventListener("DOMContentLoaded", function () {
     $('html,body').animate({
       scrollTop: $('.portfolio').offset().top }, 'slow');
   });
+  $('#projects-link').click(function () {
+    $('html,body').animate({
+      scrollTop: $('.portfolio').offset().top }, 'slow');
+  });
   $('.scroll-button-4').click(function () {
     $('html,body').animate({
       scrollTop: $('.splash').offset().top }, 'slow');
@@ -132,17 +144,15 @@ window.addEventListener("DOMContentLoaded", function () {
 
   var round1 = ["Development".split(""), "and Design.".split("")];
 
-  var round2 = ["Composition".split(""), "and Texture.".split("")];
+  var round2 = ["Composition".split(""), "and Architecture.".split("")];
 
-  var round3 = ["Quality".split(""), "and Efficiency.".split("")];
+  var round3 = ["Story".split(""), "and Character.".split("")];
 
-  var round4 = ["Story".split(""), "and Character.".split("")];
+  var round4 = ["Miles".split(""), "McLeod.".split("")];
 
-  var round5 = ["Miles".split(""), "McLeod.".split("")];
+  var rounds = [round1, round2, round3, round4];
 
-  var rounds = [round1, round2, round3, round4, round5];
-
-  for (var _i = 1; _i < 6; _i++) {
+  for (var _i = 1; _i < 5; _i++) {
     console.log(_i);
     while (rounds[_i - 1][0].length > 0) {
       var word1Holder = document.getElementById("word-1-holder-" + _i);
@@ -160,8 +170,7 @@ window.addEventListener("DOMContentLoaded", function () {
   var i = setRound(1, 0);
   var j = setRound(2, i);
   var k = setRound(3, j);
-  var l = setRound(4, k);
-  setRound(5, l, false);
+  setRound(4, k, false);
 });
 
 function setRound(x) {

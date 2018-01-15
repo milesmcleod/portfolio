@@ -13,7 +13,17 @@ window.addEventListener("DOMContentLoaded", function() {
       scrollTop: $('.bio').offset().top},
       'slow');
   });
+  $('#bio-link').click(function() {
+    $('html,body').animate({
+      scrollTop: $('.bio').offset().top},
+      'slow');
+  });
   $('.scroll-button-2').click(function() {
+    $('html,body').animate({
+      scrollTop: $('.tech').offset().top},
+      'slow');
+  });
+  $('#tools-link').click(function() {
     $('html,body').animate({
       scrollTop: $('.tech').offset().top},
       'slow');
@@ -24,6 +34,11 @@ window.addEventListener("DOMContentLoaded", function() {
       'slow');
   });
   $('.click-me').click(function() {
+    $('html,body').animate({
+      scrollTop: $('.portfolio').offset().top},
+      'slow');
+  });
+  $('#projects-link').click(function() {
     $('html,body').animate({
       scrollTop: $('.portfolio').offset().top},
       'slow');
@@ -41,29 +56,24 @@ window.addEventListener("DOMContentLoaded", function() {
 
   const round2 = [
     "Composition".split(""),
-    "and Texture.".split("")
+    "and Architecture.".split("")
   ];
 
   const round3 = [
-    "Quality".split(""),
-    "and Efficiency.".split("")
-  ];
-
-  const round4 = [
     "Story".split(""),
     "and Character.".split("")
   ];
 
-  const round5 = [
+  const round4 = [
     "Miles".split(""),
     "McLeod.".split("")
   ];
 
   const rounds = [
-    round1, round2, round3, round4, round5
+    round1, round2, round3, round4
   ];
 
-  for (let i = 1; i < 6; i++) {
+  for (let i = 1; i < 5; i++) {
     console.log(i);
     while (rounds[i - 1][0].length > 0) {
       const word1Holder = document.getElementById(`word-1-holder-${i}`);
@@ -87,8 +97,7 @@ window.addEventListener("DOMContentLoaded", function() {
   let i = setRound(1, 0);
   let j = setRound(2, i);
   let k = setRound(3, j);
-  let l =setRound(4, k);
-  setRound(5, l, false);
+  setRound(4, k, false);
 
 });
 
