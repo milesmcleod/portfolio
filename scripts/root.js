@@ -41,22 +41,22 @@ window.addEventListener("DOMContentLoaded", function() {
 
   const round2 = [
     "Composition".split(""),
-    "and Texture".split("")
+    "and Texture.".split("")
   ];
 
   const round3 = [
     "Quality".split(""),
-    "and Efficiency".split("")
+    "and Efficiency.".split("")
   ];
 
   const round4 = [
     "Story".split(""),
-    "and Character".split("")
+    "and Character.".split("")
   ];
 
   const round5 = [
     "Miles".split(""),
-    "McLeod".split("")
+    "McLeod.".split("")
   ];
 
   const rounds = [
@@ -84,9 +84,18 @@ window.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+  let i = setRound(1, 0);
+  let j = setRound(2, i);
+  let k = setRound(3, j);
+  let l =setRound(4, k);
+  setRound(5, l, false);
+
+});
+
+function setRound(x, inbound = 0, disappear = true) {
   window.setTimeout(() => {
-    const word1Holder = document.getElementById(`word-1-holder-1`);
-    let i = 500;
+    const word1Holder = document.getElementById(`word-1-holder-${x}`);
+    let i = 500 + inbound;
     for (let j = 0; j < word1Holder.childElementCount; j++) {
       window.setTimeout(() => {
         word1Holder.children[j].classList.add('top-letter-show');
@@ -96,14 +105,26 @@ window.addEventListener("DOMContentLoaded", function() {
   }, 500);
 
   window.setTimeout(() => {
-    const word2Holder = document.getElementById(`word-2-holder-1`);
-    let i = 500;
-    for (let j = 0; j < word2Holder.childElementCount; j++) {
+    const word2Holder = document.getElementById(`word-2-holder-${x}`);
+    let i = 500 + inbound;
+    for (let j = word2Holder.childElementCount - 1; j >= 0; j--) {
       window.setTimeout(() => {
         word2Holder.children[j].classList.add('bottom-letter-show');
       }, i);
       i += 100;
     }
+    i += 1000;
+    if (disappear) window.setTimeout(() => {
+      const word1Holder = document.getElementById(`word-1-holder-${x}`);
+      word1Holder.classList.add('disappear');
+      word2Holder.classList.add('disappear');
+    }, i);
   }, 500);
-
-});
+  const word1Holder = document.getElementById(`word-1-holder-${x}`);
+  const word2Holder = document.getElementById(`word-2-holder-${x}`);
+  let val = (word1Holder.children.length > word2Holder.children.length) ?
+  inbound + 500 + 1000 + word1Holder.children.length * 110 :
+  inbound + 500 + 1000 + word2Holder.children.length * 110;
+  console.log(val);
+  return val;
+}

@@ -132,34 +132,45 @@ window.addEventListener("DOMContentLoaded", function () {
 
   var round1 = ["Development".split(""), "and Design.".split("")];
 
-  var round2 = ["Composition".split(""), "and Texture".split("")];
+  var round2 = ["Composition".split(""), "and Texture.".split("")];
 
-  var round3 = ["Quality".split(""), "and Efficiency".split("")];
+  var round3 = ["Quality".split(""), "and Efficiency.".split("")];
 
-  var round4 = ["Story".split(""), "and Character".split("")];
+  var round4 = ["Story".split(""), "and Character.".split("")];
 
-  var round5 = ["Miles".split(""), "McLeod".split("")];
+  var round5 = ["Miles".split(""), "McLeod.".split("")];
 
   var rounds = [round1, round2, round3, round4, round5];
 
-  for (var i = 1; i < 6; i++) {
-    console.log(i);
-    while (rounds[i - 1][0].length > 0) {
-      var word1Holder = document.getElementById("word-1-holder-" + i);
-      var char = rounds[i - 1][0].shift();
+  for (var _i = 1; _i < 6; _i++) {
+    console.log(_i);
+    while (rounds[_i - 1][0].length > 0) {
+      var word1Holder = document.getElementById("word-1-holder-" + _i);
+      var char = rounds[_i - 1][0].shift();
       word1Holder.insertAdjacentHTML('beforeend', "<div\n      style='display:inline;'\n      class=\"top-letter\"\n      >" + char + "</div>");
     }
 
-    while (rounds[i - 1][1].length > 0) {
-      var word2Holder = document.getElementById("word-2-holder-" + i);
-      var _char = rounds[i - 1][1].shift();
+    while (rounds[_i - 1][1].length > 0) {
+      var word2Holder = document.getElementById("word-2-holder-" + _i);
+      var _char = rounds[_i - 1][1].shift();
       word2Holder.insertAdjacentHTML('beforeend', "<div\n      style='display:inline;'\n      class=\"bottom-letter\"\n      >" + _char + "</div>");
     }
   }
 
+  var i = setRound(1, 0);
+  var j = setRound(2, i);
+  var k = setRound(3, j);
+  var l = setRound(4, k);
+  setRound(5, l, false);
+});
+
+function setRound(x) {
+  var inbound = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+  var disappear = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+
   window.setTimeout(function () {
-    var word1Holder = document.getElementById("word-1-holder-1");
-    var i = 500;
+    var word1Holder = document.getElementById("word-1-holder-" + x);
+    var i = 500 + inbound;
 
     var _loop = function _loop(j) {
       window.setTimeout(function () {
@@ -174,8 +185,8 @@ window.addEventListener("DOMContentLoaded", function () {
   }, 500);
 
   window.setTimeout(function () {
-    var word2Holder = document.getElementById("word-2-holder-1");
-    var i = 500;
+    var word2Holder = document.getElementById("word-2-holder-" + x);
+    var i = 500 + inbound;
 
     var _loop2 = function _loop2(j) {
       window.setTimeout(function () {
@@ -184,11 +195,22 @@ window.addEventListener("DOMContentLoaded", function () {
       i += 100;
     };
 
-    for (var j = 0; j < word2Holder.childElementCount; j++) {
+    for (var j = word2Holder.childElementCount - 1; j >= 0; j--) {
       _loop2(j);
     }
+    i += 1000;
+    if (disappear) window.setTimeout(function () {
+      var word1Holder = document.getElementById("word-1-holder-" + x);
+      word1Holder.classList.add('disappear');
+      word2Holder.classList.add('disappear');
+    }, i);
   }, 500);
-});
+  var word1Holder = document.getElementById("word-1-holder-" + x);
+  var word2Holder = document.getElementById("word-2-holder-" + x);
+  var val = word1Holder.children.length > word2Holder.children.length ? inbound + 500 + 1000 + word1Holder.children.length * 110 : inbound + 500 + 1000 + word2Holder.children.length * 110;
+  console.log(val);
+  return val;
+}
 
 /***/ }),
 /* 2 */
