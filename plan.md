@@ -37,3 +37,10 @@
 ## animations
   - lava lamp
   - loading
+
+
+
+
+development and design
+
+composition and texture

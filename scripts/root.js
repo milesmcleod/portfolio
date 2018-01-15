@@ -7,4 +7,12 @@ window.addEventListener("DOMContentLoaded", function() {
   let ctx = canvas.getContext("2d");
   const bubbleView = new BubbleView(ctx);
   bubbleView.start(ctx);
+  $('.scroll-button').click(function() {
+    $('html,body').animate({
+      scrollTop: $('.bio').offset().top},
+      'slow');
+  });
+  window.addEventListener("scroll", (e) => {
+    console.log(window.scrollY);
+  });
 });

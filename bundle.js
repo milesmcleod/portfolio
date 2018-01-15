@@ -108,6 +108,13 @@ window.addEventListener("DOMContentLoaded", function () {
   var ctx = canvas.getContext("2d");
   var bubbleView = new BubbleView(ctx);
   bubbleView.start(ctx);
+  $('.scroll-button').click(function () {
+    $('html,body').animate({
+      scrollTop: $('.bio').offset().top }, 'slow');
+  });
+  window.addEventListener("scroll", function (e) {
+    console.log(window.scrollY);
+  });
 });
 
 /***/ }),

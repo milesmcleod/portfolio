@@ -3,31 +3,88 @@ body {
     height: 100%;
 }
 
+/* .stop-scrolling {
+  overflow: hidden;
+} */
+
 .top-nav {
   position: fixed;
-  display: block;
+  display: flex;
   top: 0px;
   width: 100%;
   height: 60px;
-  border: 1px solid blue;
-  z-index: 10;
+  z-index: 20;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 160px;
+  box-sizing: border-box;
+}
+
+.nav-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.icons {
+  flex: 1;
+  z-index: 5;
+}
+
+.icons img {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+  height: 30px;
+  margin: 0 50px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.navigation {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 5;
+}
+
+.navigation p {
+
 }
 
 .splash {
   display: block;
   height:100%;
   width: 100%;
-  border: 1px solid red;
 }
 
 .splash h1 {
   position: relative;
-  top: -66%;
+  top: -60%;
   color: white;
   font-size: 78px;
   margin-left: 10%;
   font-family: 'Poppins', sans-serif;
-  font-weight: 600;
+  font-weight: 900;
+}
+
+.splash h4 {
+  position: relative;
+  top: -40%;
+  color: white;
+  font-size: 78px;
+  margin-left: 10%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
 }
 
 .lava {
@@ -47,13 +104,22 @@ body {
   /* height: 100%; */
 }
 
+.bio-wrapper {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  background: black;
+}
+
 .bio {
   display: flex;
   justify-content: space-around;
   align-content: space-around;
   height: 100%;
   width: 100%;
-  border: 1px solid orange;
+  /* border: 1px solid orange; */
   z-index: 10;
   background-color: black;
   color: white;
@@ -63,8 +129,8 @@ body {
 
 .headshot-container {
   border: 1px solid white;
-  height: 420px;
-  width: 420px;
+  height: 520px;
+  width: 520px;
   border-radius: 50%;
   margin: auto;
 }
@@ -72,32 +138,64 @@ body {
 .bio-article-container {
   height: 100%;
   width: 50%;
+  border-top: 5px solid whitesmoke;
   white-space: nowrap;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: auto;
-  border: 1px solid white;
+  box-sizing: border-box;
 }
 
 .bio-section {
-  border: 1px solid pink;
+  /* border: 1px solid pink; */
   width: 90%;
-  height: 600px;
+  height: 90%;
+  white-space: normal;
+  padding: 10px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bio-section p {
+  font-family: 'Roboto Slab', serif;
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.divider {
+  width: 90%;
+  border-top: 5px solid whitesmoke;
+  background-color: black;
+  z-index: 15;
+}
+
+.tech-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  box-sizing: border-box;
+  /* border: 1px solid green; */
 }
 
 .tech {
   display: block;
   height: 100%;
-  width: 100%;
-  border: 1px solid green;
+  width: 80%;
 }
 
-.tech img {
-  height: 60%;
+.tech-container img {
+  height: 50%;
   border-radius: 10%;
-  margin: 0 auto;
+  margin-left: 10%;
+  margin-right: 10%;
   margin-top: 5px;
 }
 
@@ -110,14 +208,14 @@ body {
   z-index: 1;
 }
 
-.tech ul {
+.tech-container ul {
   align-content: center;
   position: relative;
   z-index: 5;
   height: 100%;
 }
 
-.tech-container {
+.tech-icon {
   display: inline-block;
   height: 30%;
   width: 20%;
@@ -154,6 +252,44 @@ body {
   flex: 1;
   border: 1px solid chartreuse;
   margin: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  color: white;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.project h2 {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.project img {
+  padding: 30px 0;
+  height: 220px;
+}
+
+.project .links {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.project .features {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+
+.project p {
+  font-family: 'Roboto Slab', serif;
+  font-size: 22px;
+  padding: 0 20px;
 }
 
 [class*="project-background-"] {
