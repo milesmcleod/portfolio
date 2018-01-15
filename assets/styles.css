@@ -79,6 +79,42 @@ body {
   font-weight: 900;
 }
 
+.word-1-holder {
+  position: absolute;
+  top: -200px;
+  width: 1000px;
+}
+
+.word-2-holder {
+  position: absolute;
+  top: 300px;
+  width: 1000px;
+}
+
+.top-letter {
+  opacity: 0;
+  position: relative;
+  top: -200px;
+  transition: all 0.5s ease;
+}
+
+.bottom-letter {
+  opacity: 0;
+  position: relative;
+  top: 300px;
+  transition: all 0.5s ease;
+}
+
+.top-letter-show {
+  opacity: 1;
+  top: 200px;
+}
+
+.bottom-letter-show {
+  opacity: 1;
+  top: -220px;
+}
+
 .splash h4 {
   position: relative;
   top: -40%;

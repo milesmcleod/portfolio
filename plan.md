@@ -44,3 +44,9 @@
 development and design
 
 composition and texture
+
+quality and efficiency
+
+story and character
+
+miles mcleod

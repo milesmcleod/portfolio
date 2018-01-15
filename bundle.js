@@ -108,6 +108,7 @@ window.addEventListener("DOMContentLoaded", function () {
   var ctx = canvas.getContext("2d");
   var bubbleView = new BubbleView(ctx);
   bubbleView.start(ctx);
+
   $('.scroll-button').click(function () {
     $('html,body').animate({
       scrollTop: $('.bio').offset().top }, 'slow');
@@ -128,9 +129,65 @@ window.addEventListener("DOMContentLoaded", function () {
     $('html,body').animate({
       scrollTop: $('.splash').offset().top }, 'slow');
   });
-  window.addEventListener("scroll", function (e) {
-    console.log(window.scrollY);
-  });
+
+  var round1 = ["Development".split(""), "and Design.".split("")];
+
+  var round2 = ["Composition".split(""), "and Texture".split("")];
+
+  var round3 = ["Quality".split(""), "and Efficiency".split("")];
+
+  var round4 = ["Story".split(""), "and Character".split("")];
+
+  var round5 = ["Miles".split(""), "McLeod".split("")];
+
+  var rounds = [round1, round2, round3, round4, round5];
+
+  for (var i = 1; i < 6; i++) {
+    console.log(i);
+    while (rounds[i - 1][0].length > 0) {
+      var word1Holder = document.getElementById("word-1-holder-" + i);
+      var char = rounds[i - 1][0].shift();
+      word1Holder.insertAdjacentHTML('beforeend', "<div\n      style='display:inline;'\n      class=\"top-letter\"\n      >" + char + "</div>");
+    }
+
+    while (rounds[i - 1][1].length > 0) {
+      var word2Holder = document.getElementById("word-2-holder-" + i);
+      var _char = rounds[i - 1][1].shift();
+      word2Holder.insertAdjacentHTML('beforeend', "<div\n      style='display:inline;'\n      class=\"bottom-letter\"\n      >" + _char + "</div>");
+    }
+  }
+
+  window.setTimeout(function () {
+    var word1Holder = document.getElementById("word-1-holder-1");
+    var i = 500;
+
+    var _loop = function _loop(j) {
+      window.setTimeout(function () {
+        word1Holder.children[j].classList.add('top-letter-show');
+      }, i);
+      i += 100;
+    };
+
+    for (var j = 0; j < word1Holder.childElementCount; j++) {
+      _loop(j);
+    }
+  }, 500);
+
+  window.setTimeout(function () {
+    var word2Holder = document.getElementById("word-2-holder-1");
+    var i = 500;
+
+    var _loop2 = function _loop2(j) {
+      window.setTimeout(function () {
+        word2Holder.children[j].classList.add('bottom-letter-show');
+      }, i);
+      i += 100;
+    };
+
+    for (var j = 0; j < word2Holder.childElementCount; j++) {
+      _loop2(j);
+    }
+  }, 500);
 });
 
 /***/ }),
