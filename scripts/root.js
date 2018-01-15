@@ -8,6 +8,34 @@ window.addEventListener("DOMContentLoaded", function() {
   const bubbleView = new BubbleView(ctx);
   bubbleView.start(ctx);
 
+  document.addEventListener("scroll", (e) => {
+    const y = window.scrollY;
+    const bio = document.getElementById("bio-link");
+    const bioY = $('.bio').offset().top - 60;
+    const tech = document.getElementById("tools-link");
+    const techY = $('.tech').offset().top - 96;
+    const projects = document.getElementById("projects-link");
+    const projectY = $('.portfolio').offset().top;
+    if (y < bioY) {
+      bio.classList.remove('current-nav');
+      tech.classList.remove('current-nav');
+      projects.classList.remove('current-nav');
+    }
+    else if (y >= bioY && y < techY ) {
+      bio.classList.add('current-nav');
+      tech.classList.remove('current-nav');
+      projects.classList.remove('current-nav');
+    } else if (y >= techY && y < projectY ) {
+      tech.classList.add('current-nav');
+      bio.classList.remove('current-nav');
+      projects.classList.remove('current-nav');
+    } else if (y >= projectY) {
+      projects.classList.add('current-nav');
+      bio.classList.remove('current-nav');
+      tech.classList.remove('current-nav');
+    }
+  });
+
   $('.scroll-button').click(function() {
     $('html,body').animate({
       scrollTop: $('.bio').offset().top - 60},
@@ -20,12 +48,12 @@ window.addEventListener("DOMContentLoaded", function() {
   });
   $('.scroll-button-2').click(function() {
     $('html,body').animate({
-      scrollTop: $('.tech').offset().top},
+      scrollTop: $('.tech').offset().top - 94},
       'slow');
   });
   $('#tools-link').click(function() {
     $('html,body').animate({
-      scrollTop: $('.tech').offset().top},
+      scrollTop: $('.tech').offset().top - 94},
       'slow');
   });
   $('.scroll-button-3').click(function() {

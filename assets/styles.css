@@ -1,13 +1,8 @@
 html,
 body {
     height: 100%;
-    /* cursor: cell; */
     background: black;
 }
-
-/* .stop-scrolling {
-  overflow: hidden;
-} */
 
 .top-nav {
   position: fixed;
@@ -66,7 +61,15 @@ body {
 }
 
 .navigation p {
+  display: block;
+  transition: all 0.6s ease;
+  padding: 20px 20px;
+  /* border-radius: 5px; */
+}
 
+.current-nav {
+  background: whitesmoke;
+  color: black;
 }
 
 .splash {
@@ -155,6 +158,10 @@ body {
   height: 100%;
 }
 
+.lava:hover {
+  cursor: crosshair;
+}
+
 .splash-background {
   background-color: black;
   display: block;
@@ -214,6 +221,7 @@ body {
   position: relative;
   bottom: 85px;
   z-index: 20;
+  font-weight: bold;
 }
 
 .scroll-button-2:hover {
@@ -246,8 +254,19 @@ body {
 }
 
 .bio-section img {
-  width: 550px;
-  margin-bottom: 30px;
+  width: 475px;
+  margin-bottom: 60px;
+}
+
+.bullets {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.bullets img {
+  margin-top: 5px;
+  margin-left: 6%;
 }
 
 .bio-section p {
@@ -297,7 +316,7 @@ body {
 }
 
 .tech {
-  padding-top: 50px;
+  /* padding-top: 50px; */
   padding-bottom: 80px;
   /* box-sizing: border-box; */
   display: block;
@@ -335,7 +354,7 @@ body {
   width: 20%;
   z-index: 20;
   margin-left: 4%;
-  margin-top: 1.2%;
+  margin-top: 1%;
 }
 
 .tech-container div {
@@ -359,7 +378,8 @@ body {
   margin-bottom: 30px;
   z-index: 16;
   position: relative;
-  top: -60px;
+  top: -70px;
+  font-weight: bold;
 }
 
 .tech h4:hover {
