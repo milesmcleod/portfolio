@@ -10,12 +10,12 @@ window.addEventListener("DOMContentLoaded", function() {
 
   $('.scroll-button').click(function() {
     $('html,body').animate({
-      scrollTop: $('.bio').offset().top},
+      scrollTop: $('.bio').offset().top - 60},
       'slow');
   });
   $('#bio-link').click(function() {
     $('html,body').animate({
-      scrollTop: $('.bio').offset().top},
+      scrollTop: $('.bio').offset().top - 60},
       'slow');
   });
   $('.scroll-button-2').click(function() {
@@ -66,7 +66,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
   const round4 = [
     "Miles".split(""),
-    "McLeod.".split("")
+    "McLeod".split("")
   ];
 
   const rounds = [

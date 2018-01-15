@@ -111,11 +111,11 @@ window.addEventListener("DOMContentLoaded", function () {
 
   $('.scroll-button').click(function () {
     $('html,body').animate({
-      scrollTop: $('.bio').offset().top }, 'slow');
+      scrollTop: $('.bio').offset().top - 60 }, 'slow');
   });
   $('#bio-link').click(function () {
     $('html,body').animate({
-      scrollTop: $('.bio').offset().top }, 'slow');
+      scrollTop: $('.bio').offset().top - 60 }, 'slow');
   });
   $('.scroll-button-2').click(function () {
     $('html,body').animate({
@@ -148,7 +148,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   var round3 = ["Story".split(""), "and Character.".split("")];
 
-  var round4 = ["Miles".split(""), "McLeod.".split("")];
+  var round4 = ["Miles".split(""), "McLeod".split("")];
 
   var rounds = [round1, round2, round3, round4];
 
