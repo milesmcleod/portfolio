@@ -14,7 +14,7 @@ body {
   width: 100%;
   height: 60px;
   z-index: 20;
-  color: white;
+  color: whitesmoke;
   font-family: 'Poppins', sans-serif;
   font-size: 20px;
   font-weight: 600;
@@ -70,7 +70,7 @@ body {
 .splash h1 {
   position: relative;
   top: -60%;
-  color: white;
+  color: whitesmoke;
   font-size: 78px;
   margin-left: 10%;
   font-family: 'Poppins', sans-serif;
@@ -80,7 +80,7 @@ body {
 .splash h4 {
   position: relative;
   top: -40%;
-  color: white;
+  color: whitesmoke;
   font-size: 78px;
   margin-left: 10%;
   font-family: 'Poppins', sans-serif;
@@ -122,7 +122,7 @@ body {
   /* border: 1px solid orange; */
   z-index: 10;
   background-color: black;
-  color: white;
+  color: whitesmoke;
   font-size: 36px;
   font-family: 'Poppins', sans-serif;
 }
@@ -233,7 +233,7 @@ body {
 }
 
 .tech-container p {
-  color: white;
+  color: whitesmoke;
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
   margin-top: 10%;
@@ -242,19 +242,20 @@ body {
 .portfolio {
   display: flex;
   justify-content: space-around;
-  height: 100%;
+  height: 120%;
   width: 100%;
-  border: 1px solid purple;
+  /* border: 1px solid purple; */
   background-color: black;
 }
 
 .project {
   flex: 1;
-  border: 1px solid chartreuse;
+  /* border: 5px solid whitesmoke;
+  border-radius: 10px; */
   margin: 20px;
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
-  color: white;
+  color: whitesmoke;
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -265,31 +266,80 @@ body {
 .project h2 {
   font-size: 36px;
   font-weight: 600;
+  margin-bottom: 30px;
 }
 
 .project img {
   padding: 30px 0;
-  height: 220px;
+  height: 180px;
 }
 
 .project .links {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   width: 100%;
 }
 
-.project .features {
+.native-icon {
+  height: 64px;
+  width: 64px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.mongo-icon {
+  height: 72px;
+  width: 72px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: white;
+}
+
+.features {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   width: 100%;
-  height: 100%;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .project p {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 22px;
   padding: 0 20px;
+  text-align: center;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.anchors {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+}
+
+.project a {
+  padding: 10px 20px;
+  border: 2px solid whitesmoke;
+  border-radius: 10px;
+  color: whitesmoke;
+  text-decoration: none;
+  margin: 20px;
 }
 
 [class*="project-background-"] {
