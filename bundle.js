@@ -112,6 +112,22 @@ window.addEventListener("DOMContentLoaded", function () {
     $('html,body').animate({
       scrollTop: $('.bio').offset().top }, 'slow');
   });
+  $('.scroll-button-2').click(function () {
+    $('html,body').animate({
+      scrollTop: $('.tech').offset().top }, 'slow');
+  });
+  $('.scroll-button-3').click(function () {
+    $('html,body').animate({
+      scrollTop: $('.portfolio').offset().top }, 'slow');
+  });
+  $('.click-me').click(function () {
+    $('html,body').animate({
+      scrollTop: $('.portfolio').offset().top }, 'slow');
+  });
+  $('.scroll-button-4').click(function () {
+    $('html,body').animate({
+      scrollTop: $('.splash').offset().top }, 'slow');
+  });
   window.addEventListener("scroll", function (e) {
     console.log(window.scrollY);
   });

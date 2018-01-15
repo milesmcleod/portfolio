@@ -1,6 +1,8 @@
 html,
 body {
     height: 100%;
+    cursor: cell;
+    background: black;
 }
 
 /* .stop-scrolling {
@@ -72,7 +74,7 @@ body {
   top: -60%;
   color: whitesmoke;
   font-size: 78px;
-  margin-left: 10%;
+  margin-left: 8%;
   font-family: 'Poppins', sans-serif;
   font-weight: 900;
 }
@@ -82,9 +84,13 @@ body {
   top: -40%;
   color: whitesmoke;
   font-size: 78px;
-  margin-left: 10%;
+  margin-left: 16%;
   font-family: 'Poppins', sans-serif;
   font-weight: 900;
+}
+
+.splash h4:hover, .headshot-wrapper h4:hover, .tech h4:hover {
+  cursor: pointer;
 }
 
 .lava {
@@ -127,12 +133,32 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.headshot-wrapper {
+  height: 100%;
+  width: 520px;
+  margin: auto 90px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  align-items: center;
+}
+
 .headshot-container {
-  border: 1px solid white;
+  /* border: 1px solid white; */
   height: 520px;
   width: 520px;
   border-radius: 50%;
-  margin: auto;
+  margin: 70px auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.headshot-wrapper h4 {
+  font-size: 78px;
+  color: whitesmoke;
+  margin-top: 50px;
 }
 
 .bio-article-container {
@@ -161,9 +187,27 @@ body {
 }
 
 .bio-section p {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
   font-size: 26px;
-  line-height: 1.2;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.education {
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.education  p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.click-me:hover {
+  cursor: pointer;
 }
 
 .divider {
@@ -175,17 +219,21 @@ body {
 
 .tech-container {
   display: flex;
-  height: 100%;
+  height: 120%;
   width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 30px;
   box-sizing: border-box;
+  background-color: black;
   /* border: 1px solid green; */
 }
 
 .tech {
+  padding-top: 50px;
+  padding-bottom: 80px;
+  /* box-sizing: border-box; */
   display: block;
   height: 100%;
   width: 80%;
@@ -217,7 +265,7 @@ body {
 
 .tech-icon {
   display: inline-block;
-  height: 30%;
+  height: 28%;
   width: 20%;
   z-index: 20;
   margin-left: 4%;
@@ -239,6 +287,19 @@ body {
   margin-top: 10%;
 }
 
+.tech h4 {
+  font-size: 42px;
+  color: whitesmoke;
+  margin-bottom: 30px;
+  z-index: 16;
+  position: relative;
+  top: -60px;
+}
+
+.tech h4:hover {
+  cursor: pointer;
+}
+
 .portfolio {
   display: flex;
   justify-content: space-around;
@@ -246,6 +307,7 @@ body {
   width: 100%;
   /* border: 1px solid purple; */
   background-color: black;
+  padding-top: 60px;
 }
 
 .project {
@@ -349,8 +411,18 @@ body {
   font-size: 24px;
 }
 
-[class*="project-background-"] {
+.scroll-button-4 {
+  font-size: 42px;
+  color: whitesmoke;
+  z-index: 40;
+  background: black;
+  text-align: center;
+  position: relative;
+  top: -40px;
+  }
 
+.scroll-button-4:hover {
+  cursor: pointer;
 }
 
 .contact {
