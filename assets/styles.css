@@ -2,8 +2,7 @@ html,
 body {
     height: 100%;
     background: black;
-    min-height: 480px;
-    min-width: 320px;
+    min-height: 630px;
 }
 
 .top-nav {
@@ -644,6 +643,10 @@ body {
   color: whitesmoke;
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
+}
+
+.contact p {
+  margin-right: 15%;
 }
 
 #headshot {
