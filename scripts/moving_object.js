@@ -41,6 +41,11 @@ MovingObject.prototype.move = function move() {
   }
 };
 
+MovingObject.prototype.shift = function (deltaX, deltaY) {
+  this.pos[0] -= deltaX;
+  this.pos[1] -= deltaY;
+};
+
 MovingObject.prototype.isCollidedWith = function isCollidedWith(otherObject) {
   let totalRadius = this.radius + otherObject.radius;
   if (Util.distance(this.pos, otherObject.pos) <= totalRadius) {

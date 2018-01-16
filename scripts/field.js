@@ -42,6 +42,12 @@ Field.prototype.randomPosition = function () {
   return [x, y];
 };
 
+Field.prototype.resize = function (deltaX, deltaY) {
+  this.bubbles.forEach((bubble) => {
+    bubble.shift(deltaX, deltaY);
+  });
+};
+
 Field.prototype.draw = function (ctx) {
   ctx.clearRect(0, 0, Field.DIM_X, Field.DIM_Y);
   this.moveObjects();

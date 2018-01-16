@@ -42,6 +42,15 @@ window.addEventListener("DOMContentLoaded", function() {
     }
   });
 
+  window.addEventListener("resize", () => {
+    const deltaX = canvas.width - window.innerWidth;
+    const deltaY = canvas.height - window.innerHeight;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    console.log('ping');
+    bubbleView.resize(deltaX, deltaY);
+  });
+
   $('.scroll-button').click(function() {
     $('html,body').animate({
       scrollTop: $('.bio').offset().top - 60},

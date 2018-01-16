@@ -142,6 +142,15 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  window.addEventListener("resize", function () {
+    var deltaX = canvas.width - window.innerWidth;
+    var deltaY = canvas.height - window.innerHeight;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    console.log('ping');
+    bubbleView.resize(deltaX, deltaY);
+  });
+
   $('.scroll-button').click(function () {
     $('html,body').animate({
       scrollTop: $('.bio').offset().top - 60 }, 'slow');
@@ -294,6 +303,10 @@ BubbleView.prototype.bindClickHandler = function () {
   });
 };
 
+BubbleView.prototype.resize = function (deltaX, deltaY) {
+  this.field.resize(deltaX, deltaY);
+};
+
 module.exports = BubbleView;
 
 /***/ }),
@@ -336,6 +349,12 @@ Field.prototype.randomPosition = function () {
   var x = Math.random() * this.width + this.left;
   var y = Math.random() * this.height + this.top;
   return [x, y];
+};
+
+Field.prototype.resize = function (deltaX, deltaY) {
+  this.bubbles.forEach(function (bubble) {
+    bubble.shift(deltaX, deltaY);
+  });
 };
 
 Field.prototype.draw = function (ctx) {
@@ -451,6 +470,11 @@ MovingObject.prototype.move = function move() {
   } else if (this.pos[1] < 0 - this.radius) {
     this.pos[1] = this.maxHeight + this.radius;
   }
+};
+
+MovingObject.prototype.shift = function (deltaX, deltaY) {
+  this.pos[0] -= deltaX;
+  this.pos[1] -= deltaY;
 };
 
 MovingObject.prototype.isCollidedWith = function isCollidedWith(otherObject) {

@@ -13,11 +13,14 @@ BubbleView.prototype.start = function(ctx) {
   }, 20);
 };
 
-
 BubbleView.prototype.bindClickHandler = function () {
   document.addEventListener("click", (e) => {
     this.field.clickCheck(e);
   });
+};
+
+BubbleView.prototype.resize = function (deltaX, deltaY) {
+  this.field.resize(deltaX, deltaY);
 };
 
 module.exports = BubbleView;

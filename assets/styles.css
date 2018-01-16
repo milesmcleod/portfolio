@@ -58,12 +58,16 @@ body {
 .icons {
   flex: 1;
   z-index: 5;
-  margin-left: 13.5%;
+  margin-left: 17.5%;
 }
 
 .icons img {
   height: 30px;
   margin: 0 50px;
+}
+
+.icons img:hover {
+  cursor: pointer;
 }
 
 .spacer {
@@ -229,9 +233,10 @@ body {
 
 .headshot-container {
   border: 5px solid whitesmoke;
-  height: 420px;
+  min-height: 420px;
+  max-height: 420px;
   width: 420px;
-  border-radius: 50%;
+  border-radius: 210px;
   margin: 40px auto;
   display: flex;
   align-items: flex-end;
@@ -636,4 +641,181 @@ body {
   color: whitesmoke;
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
+}
+
+#headshot {
+  height:500px;
+}
+
+#bullet1 {
+  width:380px;
+}
+
+#bullet2 {
+  width:320px;
+}
+
+#bullet3 {
+  width:400px;
+}
+
+#hand-bio-1 {
+  width:600px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+#hand-bio-2 {
+
+}
+
+#hand-bio-3 {
+  width:600px;
+}
+
+#hand-bio-4 {
+
+}
+
+#hand-bio-5 {
+  width:80px;
+  margin:0 55% 0 35%;
+}
+
+@media all and (max-width: 1100px) {
+  .splash h4 {
+    top: -45%;
+  }
+
+  .headshot-wrapper {
+    width: 340px;
+    margin: auto 5%;
+  }
+
+  .headshot-container {
+    width: 280px;
+    min-height: 280px;
+    max-height: 280px;
+  }
+
+  .bio-section img {
+    margin-bottom: 30px
+  }
+
+  #headshot {
+    height: 360px;
+  }
+
+  #bullet1 {
+    width:275px;
+  }
+
+  #bullet2 {
+    width:215px;
+  }
+
+  #bullet3 {
+    width:295px;
+  }
+
+  #hand-bio-1 {
+    width:400px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+  }
+
+  #hand-bio-2 {
+    width: 350px;
+  }
+
+  #hand-bio-3 {
+    width: 400px;
+  }
+
+  #hand-bio-4 {
+    width: 350px;
+  }
+
+  #hand-bio-5 {
+    width:40px;
+    margin:0 55% 0 35%;
+  }
+
+  .bio-section {
+    padding: 10px 0px
+  }
+
+  .scroll-button-2 {
+    font-size: 20px;
+  }
+
+  .tech h4 {
+    font-size: 20px;
+    top: -195px;
+  }
+
+  .portfolio {
+    padding-top: 10px;
+  }
+
+  .right {
+    width: 40%;
+  }
+
+  .project p {
+    font-size: 16px;
+  }
+
+  .frame img {
+    width: 260px;
+  }
+
+  .project h2 {
+    font-size: 42px;
+  }
+
+  .project-links a {
+    font-size: 18px;
+  }
+
+  .project-links {
+    margin-left: 0;
+  }
+
+  .screenshot {
+    height: 260px;
+  }
+
+  .features {
+    margin-top: 50px;
+  }
+
+  .scroll-button-4 {
+    font-size: 20px;
+    top: -50px;
+  }
+
+  .scroll-button-5 {
+    top: -150px;
+  }
+
+  .screenshot-mobile {
+    width: 180px;
+  }
+
+  .screenshot-mobile-2 {
+    height: 320px;
+  }
+
+  .frame-mobile img {
+      width: 160px;
+  }
+
+  .scroll-button-6 {
+      top: -140px;
+  }
+
+  .project {
+    margin-bottom: 100px;
+  }
 }
