@@ -73,17 +73,17 @@ window.addEventListener("DOMContentLoaded", function() {
   });
   $('.scroll-button-3').click(function() {
     $('html,body').animate({
-      scrollTop: $('.portfolio').offset().top - 60},
+      scrollTop: $('.portfolio').offset().top - 45},
       'slow');
   });
   $('.click-me').click(function() {
     $('html,body').animate({
-      scrollTop: $('.portfolio').offset().top - 60},
+      scrollTop: $('.portfolio').offset().top - 45},
       'slow');
   });
   $('#projects-link').click(function() {
     $('html,body').animate({
-      scrollTop: $('.portfolio').offset().top - 60},
+      scrollTop: $('.portfolio').offset().top - 45},
       'slow');
   });
   $('.scroll-button-4').click(function() {
