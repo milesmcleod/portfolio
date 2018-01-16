@@ -117,6 +117,8 @@ window.addEventListener("DOMContentLoaded", function () {
     var techY = $('.tech').offset().top - 96;
     var projects = document.getElementById("projects-link");
     var projectY = $('.portfolio').offset().top - 80;
+    var nav = document.getElementById("nav");
+    var navBack = document.getElementById("nav-background");
     if (y < bioY) {
       bio.classList.remove('current-nav');
       tech.classList.remove('current-nav');
@@ -124,15 +126,19 @@ window.addEventListener("DOMContentLoaded", function () {
     } else if (y >= bioY && y < techY) {
       bio.classList.add('current-nav');
       tech.classList.remove('current-nav');
-      projects.classList.remove('current-nav');
+      projects.classList.remove('current-nav-inverted');
     } else if (y >= techY && y < projectY) {
       tech.classList.add('current-nav');
       bio.classList.remove('current-nav');
-      projects.classList.remove('current-nav');
+      projects.classList.remove('current-nav-inverted');
+      nav.classList.remove('invert-nav');
+      navBack.classList.remove('invert-nav-background');
     } else if (y >= projectY) {
-      projects.classList.add('current-nav');
+      projects.classList.add('current-nav-inverted');
       bio.classList.remove('current-nav');
       tech.classList.remove('current-nav');
+      nav.classList.add('invert-nav');
+      navBack.classList.add('invert-nav-background');
     }
   });
 
@@ -165,6 +171,14 @@ window.addEventListener("DOMContentLoaded", function () {
       scrollTop: $('.portfolio').offset().top - 60 }, 'slow');
   });
   $('.scroll-button-4').click(function () {
+    $('html,body').animate({
+      scrollTop: $('#cryptos').offset().top - 40 }, 'slow');
+  });
+  $('.scroll-button-5').click(function () {
+    $('html,body').animate({
+      scrollTop: $('#boomblock').offset().top - 80 }, 'slow');
+  });
+  $('.scroll-button-6').click(function () {
     $('html,body').animate({
       scrollTop: $('.splash').offset().top }, 'slow');
   });

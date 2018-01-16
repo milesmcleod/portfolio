@@ -18,6 +18,12 @@ body {
   align-items: center;
   justify-content: space-around;
   box-sizing: border-box;
+  transition: all 0.5s ease;
+}
+
+.invert-nav {
+  color: black;
+  border-bottom: 5px solid black;
 }
 
 .nav-background {
@@ -27,6 +33,22 @@ body {
   background: black;
   opacity: 0.8;
   z-index: 1;
+  transition: all 0.5s ease;
+}
+
+.top-nav img, footer img {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+.invert-nav img {
+  -webkit-filter: invert(0);
+  filter: invert(0);
+}
+
+.invert-nav-background {
+  background-color: whitesmoke;
+  opacity: 1;
 }
 
 #projects-link:hover, #bio-link:hover, #tools-link:hover {
@@ -40,8 +62,6 @@ body {
 }
 
 .icons img {
-  -webkit-filter: invert(1);
-  filter: invert(1);
   height: 30px;
   margin: 0 50px;
 }
@@ -70,6 +90,11 @@ body {
 .current-nav {
   background: whitesmoke;
   color: black;
+}
+
+.current-nav-inverted {
+  background: black;
+  color: whitesmoke;
 }
 
 .splash {
@@ -407,7 +432,7 @@ body {
   /* flex-direction: column; */
   justify-content: flex-start;
   align-items: flex-start;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
 }
 
 .title {
@@ -465,6 +490,22 @@ body {
 .screenshot {
   height: 400px;
   margin-top: 20px;
+}
+
+.mobile-screenshots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.screenshot-mobile {
+  margin-top: 20px;
+  width: 300px;
+}
+
+.screenshot-mobile-2 {
+  margin-top: 20px;
+  height: 536px;
 }
 
 .links {
@@ -539,13 +580,17 @@ body {
   justify-content: center;
 }
 
-.wireframes img {
+.frame img {
+  width: 360px;
+}
+
+.frame-mobile img {
   width: 260px;
 }
 
-.frame {
+.frame, .frame-mobile {
   /* width: 50%; */
-  height: 182px;
+  /* height: 182px; */
   margin-left: 40px;
   overflow-y: hidden;
 }
@@ -554,17 +599,29 @@ body {
   cursor: pointer;
 }
 
-.scroll-button-4 {
-  font-size: 42px;
-  color: whitesmoke;
+.scroll-button-4 ,
+.scroll-button-5 ,
+.scroll-button-6 {
+  font-size: 28px;
+  color: black;
   z-index: 40;
-  background: black;
+  /* background: black; */
   text-align: center;
   position: relative;
-  top: -40px;
-  }
+  top: -140px;
+}
 
-.scroll-button-4:hover {
+.scroll-button-5 {
+  top: -190px;
+}
+
+.scroll-button-6 {
+  top: -100px;
+}
+
+.scroll-button-4:hover ,
+.scroll-button-5:hover ,
+.scroll-button-6:hover {
   cursor: pointer;
 }
 
