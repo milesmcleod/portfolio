@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", function() {
     const tech = document.getElementById("tools-link");
     const techY = $('.tech').offset().top - 96;
     const projects = document.getElementById("projects-link");
-    const projectY = $('.portfolio').offset().top;
+    const projectY = $('.portfolio').offset().top - 80;
     if (y < bioY) {
       bio.classList.remove('current-nav');
       tech.classList.remove('current-nav');
@@ -58,17 +58,17 @@ window.addEventListener("DOMContentLoaded", function() {
   });
   $('.scroll-button-3').click(function() {
     $('html,body').animate({
-      scrollTop: $('.portfolio').offset().top},
+      scrollTop: $('.portfolio').offset().top - 60},
       'slow');
   });
   $('.click-me').click(function() {
     $('html,body').animate({
-      scrollTop: $('.portfolio').offset().top},
+      scrollTop: $('.portfolio').offset().top - 60},
       'slow');
   });
   $('#projects-link').click(function() {
     $('html,body').animate({
-      scrollTop: $('.portfolio').offset().top},
+      scrollTop: $('.portfolio').offset().top - 60},
       'slow');
   });
   $('.scroll-button-4').click(function() {

@@ -116,7 +116,7 @@ window.addEventListener("DOMContentLoaded", function () {
     var tech = document.getElementById("tools-link");
     var techY = $('.tech').offset().top - 96;
     var projects = document.getElementById("projects-link");
-    var projectY = $('.portfolio').offset().top;
+    var projectY = $('.portfolio').offset().top - 80;
     if (y < bioY) {
       bio.classList.remove('current-nav');
       tech.classList.remove('current-nav');
@@ -154,15 +154,15 @@ window.addEventListener("DOMContentLoaded", function () {
   });
   $('.scroll-button-3').click(function () {
     $('html,body').animate({
-      scrollTop: $('.portfolio').offset().top }, 'slow');
+      scrollTop: $('.portfolio').offset().top - 60 }, 'slow');
   });
   $('.click-me').click(function () {
     $('html,body').animate({
-      scrollTop: $('.portfolio').offset().top }, 'slow');
+      scrollTop: $('.portfolio').offset().top - 60 }, 'slow');
   });
   $('#projects-link').click(function () {
     $('html,body').animate({
-      scrollTop: $('.portfolio').offset().top }, 'slow');
+      scrollTop: $('.portfolio').offset().top - 60 }, 'slow');
   });
   $('.scroll-button-4').click(function () {
     $('html,body').animate({
