@@ -417,12 +417,14 @@ body {
 }
 
 .left {
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
 .right {
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -529,6 +531,27 @@ body {
   margin-left: 40px;
   font-size: 30px;
   /* box-sizing: content-box; */
+}
+
+.wireframes {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.wireframes img {
+  width: 260px;
+}
+
+.frame {
+  /* width: 50%; */
+  height: 182px;
+  margin-left: 40px;
+  overflow-y: hidden;
+}
+
+.frame:hover {
+  cursor: pointer;
 }
 
 .scroll-button-4 {
