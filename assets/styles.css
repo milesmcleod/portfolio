@@ -276,7 +276,7 @@ body {
   width: 90%;
   height: 90%;
   white-space: normal;
-  padding: 10px 40px;
+  padding: 10px 10px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -682,7 +682,80 @@ body {
   margin:0 55% 0 35%;
 }
 
-@media all and (max-width: 1100px) {
+@media all and (max-width: 1400px) {
+
+  .headshot-wrapper {
+    width: 340px;
+    margin: auto 5%;
+  }
+
+  .headshot-container {
+    width: 320px;
+    min-height: 320px;
+    max-height: 320px;
+  }
+
+  #headshot {
+    height: 320px;
+  }
+
+  #bullet1 {
+    width:300px;
+  }
+
+  #bullet2 {
+    width:240px;
+  }
+
+  #bullet3 {
+    width:320px;
+  }
+
+  #hand-bio-1 {
+    width:450px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+  }
+
+  #hand-bio-2 {
+    width: 400px;
+  }
+
+  #hand-bio-3 {
+    width: 450px;
+  }
+
+  #hand-bio-4 {
+    width: 400px;
+  }
+
+  #hand-bio-5 {
+    width:60px;
+    margin:0 55% 0 35%;
+  }
+
+  .bio {
+    border-top: 5px solid whitesmoke;
+  }
+
+  .bio-article-container {
+    border-top: none;
+  }
+
+  .screenshot-mobile {
+    width: 230px;
+  }
+
+  .screenshot-mobile-2 {
+    height: 410px;
+  }
+
+  .frame-mobile img {
+      width: 190px;
+  }
+}
+
+@media all and (max-width: 1150px) {
   .splash h4 {
     top: -45%;
   }
