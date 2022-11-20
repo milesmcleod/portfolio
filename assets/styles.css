@@ -9,7 +9,8 @@ body {
   position: fixed;
   display: flex;
   top: 0px;
-  width: 100%;
+  left: 0px;
+  right: 0px;
   height: 60px;
   z-index: 20;
   color: whitesmoke;
@@ -18,7 +19,6 @@ body {
   font-weight: 600;
   align-items: center;
   justify-content: space-around;
-  box-sizing: border-box;
   transition: all 0.5s ease;
 }
 
@@ -29,7 +29,8 @@ body {
 
 .nav-background {
   position: absolute;
-  width: 100%;
+  left: 0px;
+  right: 0px;
   height: 100%;
   background: black;
   opacity: 0.8;
@@ -58,16 +59,19 @@ body {
 
 .icons {
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 5;
-  margin-left: 17.5%;
+  margin-left: 5%;
 }
 
-.icons img {
+.icons img, .contact img {
   height: 30px;
   margin: 0 50px;
 }
 
-.icons img:hover {
+.icons img:hover, .contact img:hover {
   cursor: pointer;
 }
 
@@ -108,6 +112,16 @@ body {
   width: 100%;
 }
 
+.bullets li {
+  font-family: 'Poppins', sans-serif;
+  line-height: 26px;
+  font-size: 20px;
+  list-style: circle;
+  padding: 10px 0px 0px 0px;
+  width: 90%;
+  margin: 0 auto;
+}
+
 .splash h1 {
   position: relative;
   top: -60%;
@@ -122,7 +136,7 @@ body {
   position: absolute;
   top: -200px;
   left: 10%;
-  width: 1000px;
+  right: 0px;
   transition: opacity 0.7s ease;
 }
 
@@ -130,7 +144,7 @@ body {
   position: absolute;
   top: 300px;
   left: 10%;
-  width: 1000px;
+  right: 0px;
   transition: opacity 0.7s ease;
 }
 
@@ -166,7 +180,7 @@ body {
   display: block;
   width: 100px;
   position: relative;
-  top: -40%;
+  top: -30%;
   color: whitesmoke;
   font-size: 78px;
   margin-left: 21%;
@@ -184,8 +198,8 @@ body {
   position: absolute;
   z-index: 1;
   left: 65%;
-  width: 25%;
-  height: 100%;
+  right: 0px;
+  width: 20%;
 }
 
 .lava:hover {
@@ -201,7 +215,7 @@ body {
 
 .bio-wrapper {
   display: flex;
-  height: 100%;
+  height: auto;
   width: 100%;
   flex-direction: column;
   align-items: center;
@@ -250,7 +264,7 @@ body {
   color: whitesmoke;
   margin-top: 50px;
   position: relative;
-  bottom: 85px;
+  bottom: 100px;
   z-index: 20;
   font-weight: bold;
 }
@@ -334,51 +348,49 @@ body {
 }
 
 .tech-container {
-  display: flex;
+  display: block;
   height: 100%;
   width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 30px 30px 0 30px;
+  padding: 30px 30px;
   box-sizing: border-box;
   background-color: black;
   /* border: 1px solid green; */
 }
 
 .tech {
-  display: block;
+  display: flex;
   height: 100%;
   width: 80%;
 }
 
 .tech-container img {
-  height: 50%;
-  border-radius: 10%;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 5px;
+  display: block;
+  max-width: 100px;
+  max-height: 80px;
+  width: auto;
+  height: auto;
 }
 
 .tech-background {
   position: absolute;
   left: 0;
-  height: 100%;
   width: 100%;
   background-color: black;
   z-index: 1;
 }
 
-.tech-container ul {
+.tech-list {
   align-content: center;
   position: relative;
   z-index: 5;
-  height: 100%;
+  height: 120%;
 }
 
 .tech-icon {
   display: inline-block;
-  height: 28%;
   width: 20%;
   z-index: 20;
   margin-left: 4%;
@@ -390,7 +402,6 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100%;
 }
 
 .tech-container p {
@@ -398,6 +409,7 @@ body {
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
   margin-top: 10%;
+  margin-bottom: 10%;
 }
 
 .scroll-button-3 {
@@ -406,8 +418,8 @@ body {
   margin-bottom: 30px;
   z-index: 16;
   position: relative;
-  top: -60px;
   font-weight: bold;
+  bottom: 40px
 }
 
 .scroll-button-3:hover {
@@ -422,7 +434,8 @@ body {
   width: 100%;
   /* border: 1px solid purple; */
   background-color: whitesmoke;
-  padding-top: 60px;
+  overflow-x: hidden;
+  border: none;
 }
 
 .project {
@@ -430,7 +443,6 @@ body {
   height: 100%;
   /* border: 5px solid whitesmoke;
   border-radius: 10px; */
-  margin: 0 20px;
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
   color: black;
@@ -439,13 +451,16 @@ body {
   /* flex-direction: column; */
   justify-content: flex-start;
   align-items: flex-start;
-  margin-bottom: 200px;
+  padding: 40px;
 }
 
 .title {
-  display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
+}
+
+.title div {
+  margin: 20px 10px 10px 10px;
 }
 
 .left {
@@ -475,7 +490,7 @@ body {
 
 .features li p {
   margin-bottom: 20px;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .features li:first-child {
@@ -491,12 +506,15 @@ body {
 .project h2 {
   font-size: 56px;
   font-weight: 600;
-  padding-top: 40px;
+  padding: 10px;
 }
 
 .screenshot {
-  height: 400px;
+  max-height: 400px;
+  max-width: 600px;
   margin-top: 20px;
+  width: auto;
+  height: auto;
 }
 
 .mobile-screenshots {
@@ -526,13 +544,6 @@ body {
 .links img {
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
-}
-
-.project-links {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 30px;
-  margin-left: 60px;
 }
 
 .native-icon {
@@ -569,14 +580,13 @@ body {
   justify-content: center;
 }
 
-.project-links a {
+.title a {
   padding: 5px 10px;
   border-radius: 10px;
   border: 2px solid black;
   /* background-color: #7f00ff; */
   color: black;
   text-decoration: none;
-  margin-left: 40px;
   font-size: 30px;
   /* box-sizing: content-box; */
 }
@@ -606,29 +616,20 @@ body {
   cursor: pointer;
 }
 
-.scroll-button-4 ,
-.scroll-button-5 ,
-.scroll-button-6 {
+.scroll-button-4, .scroll-button-5 {
   font-size: 28px;
   color: black;
-  z-index: 40;
+  z-index: 4;
   /* background: black; */
   text-align: center;
-  position: relative;
-  top: -120px;
-}
-
-.scroll-button-5 {
-  top: -190px;
-}
-
-.scroll-button-6 {
+  width: 100%;
+  height: 60px;
+  background: whitesmoke;
   top: -100px;
+  border: none;
 }
 
-.scroll-button-4:hover ,
-.scroll-button-5:hover ,
-.scroll-button-6:hover {
+.scroll-button-4:hover, .scroll-button-5:hover {
   cursor: pointer;
 }
 
@@ -764,14 +765,6 @@ body {
     font-size: 18px;
   }
 
-  .portfolio {
-    padding-top: 10px;
-  }
-
-  .screenshot {
-    height: 300px;
-  }
-
   .frame img {
     width: 280px;
   }
@@ -782,9 +775,6 @@ body {
 }
 
 @media all and (max-width: 1150px) {
-  .splash h4 {
-    top: -45%;
-  }
 
   .headshot-wrapper {
     width: 340px;
@@ -850,11 +840,7 @@ body {
 
   .scroll-button-3 {
     font-size: 20px;
-    top: -60px;
-  }
-
-  .portfolio {
-    padding-top: 10px;
+    top: -20px
   }
 
   .right {
@@ -873,30 +859,16 @@ body {
     font-size: 42px;
   }
 
-  .project-links a {
+  .title a {
     font-size: 18px;
   }
 
-  .project-links {
+  .title {
     margin-left: 0;
-  }
-
-  .screenshot {
-    height: 260px;
   }
 
   .features {
     margin-top: 50px;
-  }
-
-  .scroll-button-4 {
-    font-size: 20px;
-    top: -50px;
-  }
-
-  .scroll-button-5 {
-    font-size: 20px;
-    top: -150px;
   }
 
   .screenshot-mobile {
@@ -911,17 +883,15 @@ body {
       width: 160px;
   }
 
-  .scroll-button-6 {
+  .scroll-button-4 {
     font-size: 20px;
     top: -150px;
   }
 
-  .project {
-    margin-bottom: 100px;
-  }
 }
 
-@media (max-width: 599px) {
+@media all and (max-width: 600px) {
+
   .icons img {
     height: 30px;
     margin: 0 15px;
@@ -930,7 +900,34 @@ body {
   .icons {
     flex: 1;
     z-index: 5;
-    margin-left: 10.5%;
+    margin-left: 5%;
+  }
+
+  .top-nav {
+    font-size: 16px;
+  }
+
+  #hand-bio-1 {
+    width:350px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+  }
+
+  #hand-bio-2 {
+    width: 350px;
+  }
+
+  #hand-bio-3 {
+    width: 350px;
+  }
+
+  #hand-bio-4 {
+    width: 350px;
+  }
+
+  #hand-bio-5 {
+    width:40px;
+    margin:0 55% 0 35%;
   }
 
   .bio-wrapper {
@@ -993,32 +990,25 @@ body {
   }
 
   .tech-icon {
-    display: inline-block;
-    height: 40%;
-    width: 25%;
     z-index: 20;
-    margin-left: 4%;
-    margin-top: 1%;
+    margin: 0 auto;
+    width: 33%;
+  }
+
+  .redux {
+    display: none
   }
 
   .tech-container {
     display: flex;
-    height: 840px;
     width: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 30px 30px 0 30px;
+    padding: 10px 0px;
     box-sizing: border-box;
     background-color: black;
     /* border: 1px solid green; */
-  }
-
-  .tech-container ul {
-    align-content: center;
-    position: relative;
-    z-index: 5;
-    height: 100%;
   }
 
   .tech-container p {
@@ -1034,16 +1024,21 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 500px;
   }
 
   .tech-container img {
-    height: 15%;
-    border-radius: 10%;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 5px;
-}
+    display: block;
+    max-width: 100px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+  }
+
+  .tech-list {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100%;
+  }
 
   .scroll-button-3 {
     display: none;
@@ -1055,6 +1050,8 @@ body {
 
   .splash h1 {
     position: relative;
+    left: 0px;
+    right: 0px;
     top: -60%;
     color: whitesmoke;
     font-size: 42px;
@@ -1063,13 +1060,20 @@ body {
     font-weight: 900;
   }
 
+  .splash h1 div {
+    left: 0px;
+    right: 0px;
+  }
+
   .splash h4 {
     display: block;
     width: 100px;
     position: relative;
-    top: -45%;
+    left: 0px;
+    right: 0px;
+    top: -30%;
     color: whitesmoke;
-    font-size: 64px;
+    font-size: 48px;
     margin-left: 21%;
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
@@ -1079,7 +1083,6 @@ body {
     display: block;
     width: 100%;
     background-color: whitesmoke;
-    padding-top: 10px;
   }
 
   .project {
@@ -1089,7 +1092,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 24px;
     color: black;
-    padding: 0;
+    padding: 20px 0px 0px 0px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -1098,17 +1101,16 @@ body {
   }
 
   .screenshot {
-    width: 420px;
+    max-width: 96%;
   }
 
-  .project-links a {
+  .title a {
     padding: 5px 10px;
     border-radius: 10px;
     border: 2px solid black;
     /* background-color: #7f00ff; */
     color: black;
     text-decoration: none;
-    margin-left: 20px;
     font-size: 18px;
     /* box-sizing: content-box; */
   }
@@ -1138,8 +1140,32 @@ body {
     margin-bottom: 20px;
   }
 
-  .scroll-button-4, .scroll-button-5, .scroll-button-6 {
+  .contact {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: black;
+    color: whitesmoke;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+  }
+  
+  .contact p {
+    margin: 0 auto
+  }
+
+  .contact .spacer {
+    height: 30px;
+  }
+
+  .scroll-button-4, .scroll-button-5 {
     display: none;
+  }
+
+  .bottom-letter-show {
+    top: -255px;
   }
 }
 

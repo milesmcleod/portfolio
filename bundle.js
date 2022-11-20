@@ -114,7 +114,7 @@ window.addEventListener("DOMContentLoaded", function () {
     var bio = document.getElementById("bio-link");
     var bioY = $('.bio').offset().top - 60;
     var tech = document.getElementById("tools-link");
-    var techY = $('.tech').offset().top - 96;
+    var techY = $('.tech-container').offset().top - 70;
     var projects = document.getElementById("projects-link");
     var projectY = $('.portfolio').offset().top - 80;
     var nav = document.getElementById("nav");
@@ -147,7 +147,6 @@ window.addEventListener("DOMContentLoaded", function () {
     var deltaY = canvas.height - window.innerHeight;
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    console.log('ping');
     bubbleView.resize(deltaX, deltaY);
   });
 
@@ -160,12 +159,13 @@ window.addEventListener("DOMContentLoaded", function () {
       scrollTop: $('.bio').offset().top - 60 }, 'slow');
   });
   $('.scroll-button-2').click(function () {
+    console.log('beans');
     $('html,body').animate({
-      scrollTop: $('.tech').offset().top - 94 }, 'slow');
+      scrollTop: $('.tech-container').offset().top - 64 }, 'slow');
   });
   $('#tools-link').click(function () {
     $('html,body').animate({
-      scrollTop: $('.tech').offset().top - 94 }, 'slow');
+      scrollTop: $('.tech-container').offset().top - 64 }, 'slow');
   });
   $('.scroll-button-3').click(function () {
     $('html,body').animate({
@@ -181,28 +181,26 @@ window.addEventListener("DOMContentLoaded", function () {
   });
   $('.scroll-button-4').click(function () {
     $('html,body').animate({
-      scrollTop: $('#cryptos').offset().top - 40 }, 'slow');
+      scrollTop: $('#purplenote').offset().top - 80 }, 'slow');
   });
   $('.scroll-button-5').click(function () {
-    $('html,body').animate({
-      scrollTop: $('#boomblock').offset().top - 80 }, 'slow');
-  });
-  $('.scroll-button-6').click(function () {
     $('html,body').animate({
       scrollTop: $('.splash').offset().top }, 'slow');
   });
 
-  var round1 = ["Development".split(""), "and Design.".split("")];
+  var round1 = ["Hi!".split(""), "I'm Miles".split("")];
 
-  var round2 = ["Composition".split(""), "and Architecture.".split("")];
+  var round2 = ["I create APIs".split(""), "and microservices.".split("")];
 
-  var round3 = ["Story".split(""), "and Character.".split("")];
+  var round3 = ["I love".split(""), "Typescript.".split("")];
 
-  var round4 = ["Miles".split(""), "McLeod".split("")];
+  var round4 = ["I'm also a".split(""), "certified scrum master.".split("")];
 
-  var rounds = [round1, round2, round3, round4];
+  var round5 = ["Miles".split(""), "McLeod".split("")];
 
-  for (var _i = 1; _i < 5; _i++) {
+  var rounds = [round1, round2, round3, round4, round5];
+
+  for (var _i = 1; _i < 6; _i++) {
     console.log(_i);
     while (rounds[_i - 1][0].length > 0) {
       var word1Holder = document.getElementById("word-1-holder-" + _i);
@@ -220,7 +218,8 @@ window.addEventListener("DOMContentLoaded", function () {
   var i = setRound(1, 0);
   var j = setRound(2, i);
   var k = setRound(3, j);
-  setRound(4, k, false);
+  var l = setRound(4, k);
+  setRound(5, l, false);
 });
 
 function setRound(x) {
@@ -241,7 +240,7 @@ function setRound(x) {
     for (var j = 0; j < word1Holder.childElementCount; j++) {
       _loop(j);
     }
-  }, 500);
+  }, 600);
 
   window.setTimeout(function () {
     var word2Holder = document.getElementById("word-2-holder-" + x);
@@ -257,7 +256,7 @@ function setRound(x) {
     for (var j = word2Holder.childElementCount - 1; j >= 0; j--) {
       _loop2(j);
     }
-    i += 1000;
+    i += 1500;
     if (disappear) window.setTimeout(function () {
       var word1Holder = document.getElementById("word-1-holder-" + x);
       word1Holder.classList.add('disappear');
@@ -266,7 +265,7 @@ function setRound(x) {
   }, 500);
   var word1Holder = document.getElementById("word-1-holder-" + x);
   var word2Holder = document.getElementById("word-2-holder-" + x);
-  var val = word1Holder.children.length > word2Holder.children.length ? inbound + 500 + 1000 + word1Holder.children.length * 110 : inbound + 500 + 1000 + word2Holder.children.length * 110;
+  var val = word1Holder.children.length > word2Holder.children.length ? inbound + 500 + 1500 + word1Holder.children.length * 110 : inbound + 500 + 1500 + word2Holder.children.length * 110;
   console.log(val);
   return val;
 }
@@ -415,19 +414,19 @@ module.exports = Field;
 var Util = __webpack_require__(0);
 var MovingObject = __webpack_require__(5);
 
-var Asteroid = function Asteroid(options) {
-  options.color = Asteroid.COLOR[Math.floor(Math.random() * 5)];
-  options.radius = Asteroid.RADIUS[Math.floor(Math.random() * 12)];
+var Bubble = function Bubble(options) {
+  options.color = Bubble.COLOR[Math.floor(Math.random() * 5)];
+  options.radius = Bubble.RADIUS[Math.floor(Math.random() * 12)];
   options.vel = Util.randomVec(1.5);
   MovingObject.prototype.constructor.call(this, options);
 };
 
-Asteroid.COLOR = ["#FF0000", "#B30000", "#FF9933", "#FF3300", "#FFCC00"];
-Asteroid.RADIUS = [36, 48, 60, 72, 84, 96, 108, 120, 132, 144, 156, 168];
+Bubble.COLOR = ["#FF0000", "#B30000", "#FF9933", "#FF3300", "#FFCC00"];
+Bubble.RADIUS = [36, 48, 60, 72, 84, 96, 108, 120, 132, 144, 156, 168];
 
-Util.inherits(Asteroid, MovingObject);
+Util.inherits(Bubble, MovingObject);
 
-module.exports = Asteroid;
+module.exports = Bubble;
 
 /***/ }),
 /* 5 */

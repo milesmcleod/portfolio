@@ -13,7 +13,7 @@ window.addEventListener("DOMContentLoaded", function() {
     const bio = document.getElementById("bio-link");
     const bioY = $('.bio').offset().top - 60;
     const tech = document.getElementById("tools-link");
-    const techY = $('.tech').offset().top - 96;
+    const techY = $('.tech-container').offset().top - 70;
     const projects = document.getElementById("projects-link");
     const projectY = $('.portfolio').offset().top - 80;
     const nav = document.getElementById("nav");
@@ -47,7 +47,6 @@ window.addEventListener("DOMContentLoaded", function() {
     const deltaY = canvas.height - window.innerHeight;
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    console.log('ping');
     bubbleView.resize(deltaX, deltaY);
   });
 
@@ -62,13 +61,14 @@ window.addEventListener("DOMContentLoaded", function() {
       'slow');
   });
   $('.scroll-button-2').click(function() {
+    console.log('beans')
     $('html,body').animate({
-      scrollTop: $('.tech').offset().top - 94},
+      scrollTop: $('.tech-container').offset().top - 64},
       'slow');
   });
   $('#tools-link').click(function() {
     $('html,body').animate({
-      scrollTop: $('.tech').offset().top - 94},
+      scrollTop: $('.tech-container').offset().top - 64},
       'slow');
   });
   $('.scroll-button-3').click(function() {
@@ -88,45 +88,45 @@ window.addEventListener("DOMContentLoaded", function() {
   });
   $('.scroll-button-4').click(function() {
     $('html,body').animate({
-      scrollTop: $('#cryptos').offset().top - 40},
+      scrollTop: $('#purplenote').offset().top - 80},
       'slow');
   });
   $('.scroll-button-5').click(function() {
-    $('html,body').animate({
-      scrollTop: $('#boomblock').offset().top - 80},
-      'slow');
-  });
-  $('.scroll-button-6').click(function() {
     $('html,body').animate({
       scrollTop: $('.splash').offset().top},
       'slow');
   });
 
   const round1 = [
-    "Development".split(""),
-    "and Design.".split("")
+    "Hi!".split(""),
+    "I'm Miles".split("")
   ];
 
   const round2 = [
-    "Composition".split(""),
-    "and Architecture.".split("")
+    "I create APIs".split(""),
+    "and microservices.".split("")
   ];
 
   const round3 = [
-    "Story".split(""),
-    "and Character.".split("")
+    "I love".split(""),
+    "Typescript.".split("")
   ];
 
   const round4 = [
+    "I'm also a".split(""),
+    "certified scrum master.".split("")
+  ];
+
+  const round5 = [
     "Miles".split(""),
     "McLeod".split("")
   ];
 
   const rounds = [
-    round1, round2, round3, round4
+    round1, round2, round3, round4, round5
   ];
 
-  for (let i = 1; i < 5; i++) {
+  for (let i = 1; i < 6; i++) {
     console.log(i);
     while (rounds[i - 1][0].length > 0) {
       const word1Holder = document.getElementById(`word-1-holder-${i}`);
@@ -150,7 +150,8 @@ window.addEventListener("DOMContentLoaded", function() {
   let i = setRound(1, 0);
   let j = setRound(2, i);
   let k = setRound(3, j);
-  setRound(4, k, false);
+  let l = setRound(4, k)
+  setRound(5, l, false);
 
 });
 
@@ -164,7 +165,7 @@ function setRound(x, inbound = 0, disappear = true) {
       }, i);
       i += 100;
     }
-  }, 500);
+  }, 600);
 
   window.setTimeout(() => {
     const word2Holder = document.getElementById(`word-2-holder-${x}`);
@@ -175,7 +176,7 @@ function setRound(x, inbound = 0, disappear = true) {
       }, i);
       i += 100;
     }
-    i += 1000;
+    i += 1500;
     if (disappear) window.setTimeout(() => {
       const word1Holder = document.getElementById(`word-1-holder-${x}`);
       word1Holder.classList.add('disappear');
@@ -185,8 +186,8 @@ function setRound(x, inbound = 0, disappear = true) {
   const word1Holder = document.getElementById(`word-1-holder-${x}`);
   const word2Holder = document.getElementById(`word-2-holder-${x}`);
   let val = (word1Holder.children.length > word2Holder.children.length) ?
-  inbound + 500 + 1000 + word1Holder.children.length * 110 :
-  inbound + 500 + 1000 + word2Holder.children.length * 110;
+  inbound + 500 + 1500 + word1Holder.children.length * 110 :
+  inbound + 500 + 1500 + word2Holder.children.length * 110;
   console.log(val);
   return val;
 }

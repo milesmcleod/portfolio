@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Miles McLeod</title>
     <link rel="stylesheet" href="/assets/reset.css">
     <link rel="stylesheet" href="/assets/styles.css">
@@ -14,10 +15,12 @@
     <nav id="nav" class="top-nav">
       <div class="icons">
         <a href="https://www.github.com/milesmcleod/"
+        target="_blank" rel="noopener noreferrer"
         style="text-decoration:none;">
           <img class="github" src="assets/linkicons/github_icon.png" alt="">
         </a>
         <a href="https://www.linkedin.com/in/miles-mcleod/"
+        target="_blank" rel="noopener noreferrer"
         style="text-decoration:none;">
           <img src="assets/linkicons/linkedin_box.png" alt="">
         </a>
@@ -31,8 +34,7 @@
       <div id="nav-background" class="nav-background"></div>
     </nav>
     <section class="splash">
-      <canvas id="bubble-canvas" height='2000px'
-      width='3000px' class="splash-background"></canvas>
+      <canvas id="bubble-canvas" class="splash-background"></canvas>
       <h1>
         <div id="word-1-holder-1" class="word-1-holder">
 
@@ -65,10 +67,6 @@
 
         </div>
       </h1>
-      <h1>
-        <div class="word-1" style="opacity:0;">Development</div>
-        <div class="word-2" style="opacity:0;">and Design.</div>
-      </h1>
       <h4 class="scroll-button">╲╱</h4>
       <div class="lava"></div>
     </section>
@@ -79,7 +77,7 @@
             <img id="headshot" src="/assets/miles_portfolio.jpg" alt="miles mcleod"
             class="headshot">
           </div>
-          <div class="bullets">
+          <ul class="bullets">
             <img src="/assets/bio2/education.png"
             id="bullet1"
             alt="">
@@ -89,7 +87,11 @@
             <img src="/assets/bio2/interests.png"
             id="bullet3"
             alt="">
-          </div>
+            <!-- <li>BA in Music and English from Wesleyan University</li>
+            <li>Based in Sacramento, California</li>
+            <li>Outside of development, my interests include learning to play new instruments, writing short stories, and rock climbing.</li>
+            <li>I know and have worked with the technologies that are listed below, but I can learn quickly to work with any stack.</li> -->
+          </ul>
         </div>
         <div class="bio-article-container">
           <article class="bio-section">
@@ -108,7 +110,55 @@
     <section class="tech-container">
       <div class="tech-background"></div>
       <div class="tech">
-        <ul>
+        <ul class="tech-list">
+          <li class="tech-icon">
+            <div>
+              <img src="/assets/devicons/ts.png" alt="">
+              <p>Typescript</p>
+            </div>
+          </li>
+          <li class="tech-icon">
+            <div>
+              <img src="/assets/devicons/cdk.png" alt="">
+              <p>AWS CDK</p>
+            </div>
+          </li>
+          <li class="tech-icon">
+            <div>
+              <img src="/assets/devicons/docker.png" alt="">
+              <p>Docker</p>
+            </div>
+          </li>
+          <li class="tech-icon">
+            <div>
+              <img src="/assets/devicons/githubactions.png" alt="">
+              <p>Github Actions</p>
+            </div>
+          </li>
+          <li class="tech-icon">
+            <div>
+              <img src="/assets/devicons/nest.png" alt="">
+              <p>Nest JS</p>
+            </div>
+          </li>
+          <li class="tech-icon">
+            <div>
+              <img src="/assets/devicons/next.png" alt="">
+              <p>Next JS</p>
+            </div>
+          </li>
+          <li class="tech-icon">
+            <div>
+              <img src="/assets/devicons/lambda.png" alt="">
+              <p>AWS Lambda</p>
+            </div>
+          </li>
+          <li class="tech-icon">
+            <div>
+              <img src="/assets/devicons/python.png" alt="">
+              <p>Python</p>
+            </div>
+          </li>
           <li class="tech-icon">
             <div>
               <img src="/assets/devicons/js.png" alt="">
@@ -119,49 +169,6 @@
             <div>
               <img src="/assets/devicons/react.png" alt="">
               <p>React</p>
-            </div>
-          </li>
-          <li class="tech-icon">
-            <div>
-              <img src="/assets/devicons/ruby.png" alt="">
-              <p>Ruby</p>
-            </div>
-          </li>
-          <li class="tech-icon">
-            <div>
-              <img src="/assets/devicons/rails.png" alt="">
-              <p>Rails</p>
-            </div>
-          </li>
-          <li class="tech-icon">
-            <div>
-              <img src="/assets/devicons/reactnative.png" alt="">
-              <p>React Native</p>
-            </div>
-          </li>
-          <li class="tech-icon">
-            <div>
-              <img src="/assets/devicons/node.png" alt="">
-              <p>Node</p>
-            </div>
-          </li>
-          <li class="tech-icon">
-            <div>
-              <img src="/assets/devicons/express.png" alt="">
-              <p>Express</p>
-            </div>
-          </li>
-          <li class="tech-icon">
-            <div>
-              <img src="/assets/devicons/mongo.png"
-              style="background-color:white;" alt="">
-              <p>MongoDB</p>
-            </div>
-          </li>
-          <li class="tech-icon">
-            <div>
-              <img src="/assets/devicons/redux.png" alt="">
-              <p>Redux</p>
             </div>
           </li>
           <li class="tech-icon">
@@ -178,8 +185,26 @@
           </li>
           <li class="tech-icon">
             <div>
-              <img src="/assets/devicons/rspec.png" alt="">
-              <p>Rspec</p>
+              <img src="/assets/devicons/ruby.png" alt="">
+              <p>Ruby</p>
+            </div>
+          </li>
+          <li class="tech-icon">
+            <div>
+              <img src="/assets/devicons/rails.png" alt="">
+              <p>Rails</p>
+            </div>
+          </li>
+          <li class="tech-icon">
+            <div>
+              <img src="/assets/devicons/express.png" alt="">
+              <p>Express</p>
+            </div>
+          </li>
+          <li class="tech-icon redux">
+            <div>
+              <img src="/assets/devicons/redux.png" alt="">
+              <p>Redux</p>
             </div>
           </li>
         </ul>
@@ -187,13 +212,46 @@
       </div>
     </section>
     <section class="portfolio">
-      <div class="project">
+      <div class="project" id='boomblock'>
+        <article class="left">
+          <div class="title">
+            <h2>BoomBlock</h2>
+            <div>
+              <a href="https://milesmcleod.github.io/boomblock/" target="_blank" rel="noopener noreferrer">Live</a>
+              <a href="https://github.com/milesmcleod/boomblock#readme" target="_blank" rel="noopener noreferrer">Github</a>
+            </div>
+          </div>
+          <img src="https://github.com/milesmcleod/boomblock/blob/master/frontend/assets/boomblock_screenshot.gif?raw=true"
+          class="screenshot"
+          alt="boomblock screenshot">
+          <ul class="links">
+            <li>
+              <img style="height: 64px;" src="/assets/devicons/js_black.png" alt="">
+            </li>
+          </ul>
+        </article>
+        <article class="right">
+          <ul class="features">
+            <li><p>Boomblock is an original interactive audio player.</p></li>
+            <li><p>It is built with Javascript, the Three.JS library, and the Web Audio API.</p></li>
+            <li><p>Boomblock runs on a tempo-detection algorithm that scans mp3-derived PCM data for peaks, generates a BPM, and then renders the 3D world to the beat.</p></li>
+            <li><p>All music is original.</p></li>
+          </ul>
+          <div class="wireframes">
+            <a href="https://github.com/milesmcleod/purplenote/wiki/wireframes" target="_blank" rel="noopener noreferrer">
+              <div class="frame"><img src="/assets/frames/boomblockwf1.png" alt=""></div>
+            </a>
+          </div>
+        </article>
+      </div>
+      <h4 class="scroll-button-4">╲╱</h4>
+      <div class="project" id="purplenote">
         <article class="left">
           <div class="title">
             <h2>Purplenote</h2>
-            <div class="project-links">
-              <a href="https://purplenote.herokuapp.com/">Live</a>
-              <a href="https://github.com/milesmcleod/purplenote">Github</a>
+            <div>
+              <a href="https://purplenote.herokuapp.com/" target="_blank" rel="noopener noreferrer">Live</a>
+              <a href="https://github.com/milesmcleod/purplenote#readme" target="_blank" rel="noopener noreferrer">Github</a>
             </div>
           </div>
           <img src="https://github.com/milesmcleod/purplenote-images/blob/master/purplenote-demo.gif?raw=true"
@@ -221,104 +279,23 @@
             <li><p>It features the Quill.JS rich-text editor, employs autosave functionality, and includes tons of javascript-based transitions.</p></li>
           </ul>
           <div class="wireframes">
-            <a href="https://github.com/milesmcleod/purplenote/wiki/wireframes">
+            <a href="https://github.com/milesmcleod/purplenote/wiki/wireframes" target="_blank" rel="noopener noreferrer">
               <div class="frame"><img src="/assets/frames/purplenotewf1.png" alt=""></div>
             </a>
           </div>
         </article>
       </div>
-      <h4 class="scroll-button-4">╲╱</h4>
-
-      <div class="project" id='cryptos'>
-        <article class="left">
-          <div class="title">
-            <h2>Cryptos</h2>
-            <div class="project-links">
-              <a href="https://cryptosapp.io">Demo</a>
-              <a href="https://github.com/henrychen11/cryptos"> Github</a>
-            </div>
-          </div>
-          <div class='mobile-screenshots'>
-            <img src="assets/frames/cryptoswf1.png"
-            class="screenshot-mobile-2"
-            alt="cryptos screenshot">
-            <img src="https://github.com/henrychen11/cryptos/blob/master/cryptos_demo/gifs/demo.gif?raw=true"
-            class="screenshot-mobile"
-            alt="cryptos screenshot">
-          </div>
-          <ul class="links">
-            <li class='mongo-icon'>
-              <img style="height: 64px; background-color:whitesmoke;" src="/assets/devicons/mongo.png" alt="">
-            </li>
-            <li>
-              <img style="height: 64px;" src="/assets/devicons/express.png" alt="">
-            </li>
-            <li class='native-icon'>
-              <img style="height: 64px; border-radius: 5px;" src="/assets/devicons/reactnative.png" alt="">
-            </li>
-            <li>
-              <img style="height: 64px;" src="/assets/devicons/node.png" alt="">
-            </li>
-          </ul>
-        </article>
-        <article class="right">
-          <ul class="features">
-            <li><p>Cryptos is a mobile app for tracking cryptocurrency prices and trends.</p></li>
-            <li><p>The Cryptos frontend is built with React Native and Redux.</p></li>
-            <li><p>The backend utilizes a simple Express server and stores data via an mLab-hosted Mongo Database.</p></li>
-            <li><p>The backend stores historical pricing data on the most popular coins. The data is displayed in graphs within the application.</p></li>
-          </ul>
-          <div class="wireframes">
-            <a href="https://github.com/henrychen11/cryptos/tree/master/wireframes">
-              <div class="frame-mobile"><img src="/assets/frames/cryptoswf2.png" alt=""></div>
-            </a>
-          </div>
-        </article>
-      </div>
-      <h4 class="scroll-button-5">╲╱</h4>
-      <div class="project" id='boomblock'>
-        <article class="left">
-          <div class="title">
-            <h2>BoomBlock</h2>
-            <div class="project-links">
-              <a href="https://milesmcleod.github.io/boomblock/">Live</a>
-              <a href="https://github.com/milesmcleod/boomblock">Github</a>
-            </div>
-          </div>
-          <img src="https://github.com/milesmcleod/boomblock/blob/master/frontend/assets/boomblock_screenshot.gif?raw=true"
-          class="screenshot"
-          alt="boomblock screenshot">
-          <ul class="links">
-            <li>
-              <img style="height: 64px;" src="/assets/devicons/js_black.png" alt="">
-            </li>
-          </ul>
-        </article>
-        <article class="right">
-          <ul class="features">
-            <li><p>Boomblock is an original interactive audio player.</p></li>
-            <li><p>It is built with Javascript, the Three.JS library, and the Web Audio API.</p></li>
-            <li><p>Boomblock runs on a tempo-detection algorithm that scans mp3-derived PCM data for peaks, generates a BPM, and then renders the 3D world to the beat.</p></li>
-            <li><p>All music is original.</p></li>
-          </ul>
-          <div class="wireframes">
-            <a href="https://github.com/milesmcleod/purplenote/wiki/wireframes">
-              <div class="frame"><img src="/assets/frames/boomblockwf1.png" alt=""></div>
-            </a>
-          </div>
-        </article>
-      </div>
-
     </section>
-    <h4 class="scroll-button-6">╱╲</h4>
+    <h4 class="scroll-button-5">╱╲</h4>
     <footer class="contact">
-      <div class="spacer"></div>
       <div class="icons">
         <a href="https://www.github.com/milesmcleod/"
+        target="_blank" rel="noopener noreferrer"
         style="text-decoration:none;">
           <img class="github" src="assets/linkicons/github_icon.png" alt="">
         </a>
         <a href="https://www.linkedin.com/in/miles-mcleod/"
+        target="_blank" rel="noopener noreferrer"
         style="text-decoration:none;">
           <img src="assets/linkicons/linkedin_box.png" alt="">
         </a>
