@@ -616,7 +616,7 @@ body {
   cursor: pointer;
 }
 
-.scroll-button-4, .scroll-button-5 {
+.scroll-button-4, .scroll-button-5, .scroll-button-6 {
   font-size: 28px;
   color: black;
   z-index: 4;
@@ -629,7 +629,7 @@ body {
   border: none;
 }
 
-.scroll-button-4:hover, .scroll-button-5:hover {
+.scroll-button-4, .scroll-button-5:hover, .scroll-button-6:hover {
   cursor: pointer;
 }
 
@@ -774,7 +774,7 @@ body {
   }
 }
 
-@media all and (max-width: 1150px) {
+/* @media all and (max-width: 1150px) {
 
   .headshot-wrapper {
     width: 340px;
@@ -883,14 +883,14 @@ body {
       width: 160px;
   }
 
-  .scroll-button-4 {
+  .scroll-button-4, .scroll-button-5 {
     font-size: 20px;
     top: -150px;
   }
 
-}
+} */
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 900px) {
 
   .icons img {
     height: 30px;
@@ -986,6 +986,7 @@ body {
     display: flex;
     flex-direction: column;
     margin-bottom: 80px;
+    width: 100%;
     /* align-items: center; */
   }
 
@@ -1063,6 +1064,7 @@ body {
   .splash h1 div {
     left: 0px;
     right: 0px;
+    font-size: 40px;
   }
 
   .splash h4 {
@@ -1104,6 +1106,21 @@ body {
     max-width: 96%;
   }
 
+  .title {
+    width: 100%;
+  }
+
+  .title h2 {
+    font-size: 48px;
+  }
+
+  .gif-link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .title a {
     padding: 5px 10px;
     border-radius: 10px;
@@ -1127,8 +1144,8 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 80%;
-    margin-top: 40px;
+    width: 100%;
+    margin-top: 20px;
   }
 
   .right {
@@ -1160,13 +1177,18 @@ body {
     height: 30px;
   }
 
-  .scroll-button-4, .scroll-button-5 {
+  .scroll-button-4, .scroll-button-5, .scroll-button-6 {
     display: none;
   }
 
   .bottom-letter-show {
-    top: -255px;
+    top: -260px;
   }
+
+  .features {
+    margin: 5%;
+  }
+
 }
 
 /* @mixin for-phone-only {

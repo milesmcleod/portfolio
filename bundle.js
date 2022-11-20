@@ -181,16 +181,20 @@ window.addEventListener("DOMContentLoaded", function () {
   });
   $('.scroll-button-4').click(function () {
     $('html,body').animate({
-      scrollTop: $('#purplenote').offset().top - 80 }, 'slow');
+      scrollTop: $('#budget-tool').offset().top - 80 }, 'slow');
   });
   $('.scroll-button-5').click(function () {
+    $('html,body').animate({
+      scrollTop: $('#purplenote').offset().top - 80 }, 'slow');
+  });
+  $('.scroll-button-6').click(function () {
     $('html,body').animate({
       scrollTop: $('.splash').offset().top }, 'slow');
   });
 
   var round1 = ["Hi!".split(""), "I'm Miles".split("")];
 
-  var round2 = ["I create APIs".split(""), "and microservices.".split("")];
+  var round2 = ["I create APIs &".split(""), "microservices.".split("")];
 
   var round3 = ["I love".split(""), "Typescript.".split("")];
 
